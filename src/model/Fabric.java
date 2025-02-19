@@ -56,7 +56,7 @@ public class Fabric {
     // Exibe uma mensagem de erro
     public static void mostrarMensagemErro(String mensagem) {
         JOptionPane.showMessageDialog(null, mensagem, "Erro", JOptionPane.ERROR_MESSAGE);
-    }
+    } 
 
     // Exibe as informações dos carros
     public static void mostrarInfoCarros(String info) {
