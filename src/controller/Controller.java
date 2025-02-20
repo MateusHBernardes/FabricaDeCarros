@@ -15,7 +15,7 @@ public class Controller {
             int opcao = InputOutput.mostrarOpcoes(new String[] {"Adicionar carros", "Listar carros", "Vender carros", "Sair"});
 
             switch (opcao) {
-                case 0:
+                case 0 -> {
                     // Solicita a quantidade de carros a serem adicionados
                     int quantidade = InputOutput.perguntarQuantidadeCarros();
                     while (quantidade <= 0) {
@@ -32,8 +32,8 @@ public class Controller {
 
                         fabrica.adicionarCarro(carro);
                     }
-                    break;
-                case 1:
+                }
+                case 1 -> {
                     // Verifica se há carros cadastrados
                     if (fabrica.obterCarros().isEmpty()) {
                         InputOutput.mostrarMensagemErro("Nenhum carro foi cadastrado ainda.");
@@ -45,8 +45,8 @@ public class Controller {
                         saida += InputOutput.gerarInfoCarros(carro);
                     }
                     InputOutput.mostrarInfoCarros(saida);
-                    break;
-                case 2:
+                }
+                case 2 -> {
                     // Verifica se há carros cadastrados
                     if (fabrica.obterCarros().isEmpty()) {
                         InputOutput.mostrarMensagemErro("Nenhum carro foi cadastrado ainda.");
@@ -66,13 +66,11 @@ public class Controller {
                     if (indice != 0) {
                         fabrica.removerCarro(indice - 1);
                     }
-                    break;
-                case 3:
-                    // Encerra a aplicação
+                }
+                case 3 -> // Encerra a aplicação
                     System.exit(0);
-                    break;
-                default:
-                    break;
+                default -> {
+                }
             }
         }
     }

@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
 
 public class Fabric {
     // Lista de carros
-    private List<Car> carros = new ArrayList<>();
+    private final List<Car> carros = new ArrayList<>();
 
     // Adiciona um carro à lista
     public void adicionarCarro(Car carro) {
