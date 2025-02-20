@@ -5,13 +5,13 @@ import model.Fabric;
 import view.InputOutput;
 
 public class Controller {
-    // Instância da classe Fabric que gerencia os carros
+    
     Fabric fabrica = new Fabric();
 
-    // Método que inicia a aplicação 
+    
     public void iniciarAplicacao() {
         while (true) {
-            // Exibe o menu de opções e obtém a opção selecionada pelo usuário
+            
             int opcao = InputOutput.mostrarOpcoes(new String[] {"Adicionar carros", "Listar carros", "Vender carros", "Sair"});
 
             switch (opcao) {
@@ -19,7 +19,7 @@ public class Controller {
                     // Solicita a quantidade de carros a serem adicionados
                     int quantidade = InputOutput.perguntarQuantidadeCarros();
                     while (quantidade <= 0) {
-                        // Exibe uma mensagem de erro se a quantidade for inválida
+                        
                         InputOutput.mostrarMensagemErro("Quantidade inválida. Tente novamente.");
                         quantidade = InputOutput.perguntarQuantidadeCarros();
                     }
@@ -34,7 +34,7 @@ public class Controller {
                     }
                 }
                 case 1 -> {
-                    // Verifica se há carros cadastrados
+                    
                     if (fabrica.obterCarros().isEmpty()) {
                         InputOutput.mostrarMensagemErro("Nenhum carro foi cadastrado ainda.");
                         break;
@@ -47,7 +47,7 @@ public class Controller {
                     InputOutput.mostrarInfoCarros(saida);
                 }
                 case 2 -> {
-                    // Verifica se há carros cadastrados
+                    
                     if (fabrica.obterCarros().isEmpty()) {
                         InputOutput.mostrarMensagemErro("Nenhum carro foi cadastrado ainda.");
                         break;
@@ -62,12 +62,12 @@ public class Controller {
                     }
                     int indice = InputOutput.mostrarOpcoes(opcoes);
 
-                    // Remove o carro selecionado da lista
+                    
                     if (indice != 0) {
                         fabrica.removerCarro(indice - 1);
                     }
                 }
-                case 3 -> // Encerra a aplicação
+                case 3 ->
                     System.exit(0);
                 default -> {
                 }
