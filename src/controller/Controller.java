@@ -54,10 +54,10 @@ public class Controller {
                     }
 
                     // Exibe as opções de carros para venda
-                    String[] opcoes = new String[fabrica.obterCarros().size() + 1];
+                    String[] opcoes = new String[fabrica.obterCarros().size() + 1]; // mostra p usuario
                     opcoes[0] = "Escolha o carro que deseja vender";
                     for (int i = 0; i < fabrica.obterCarros().size(); i++) {
-                        Car carro = fabrica.obterCarros().get(i);
+                        Car carro = fabrica.obterCarros().get(i); // get(i) acessa i e retorna fabrica.obterCarros().
                         opcoes[i + 1] = carro.getModelo() + " - " + carro.getCor();
                     }
                     int indice = InputOutput.mostrarOpcoes(opcoes);
